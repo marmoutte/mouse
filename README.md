@@ -29,13 +29,6 @@ This software is a **medical project** builds in the foundation [ICOM](https://t
 #### About japanese translation, thanks goes to:
   * @Natsumi -@菜摘-.
 
-#### Setup created with Inno Setup Compiler 5.5.4 (a). Thanks goes to 
-Copyright (C) 1997-2013 Jordan Russell. All rights reserved.
-Portions Copyright (C) 2000-2013 Martijn Laan. All rights reserved.
-Jordan Russell
-jr-2010 AT jrsoftware.org
-http://www.jrsoftware.org/
-
 #### About [npm](https://www.npmjs.org)/[pypi](https://pypi.python.org)'s modules/packtages, thanks and credits goes to:
   * [rogerwang/node-webkit](https://github.com/rogerwang/node-webkit).
   * [SavinaRoja/PyUserInput](https://github.com/SavinaRoja/PyUserInput).
