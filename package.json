@@ -1,0 +1,125 @@
+{
+  "main": "mouscreen.html",
+  "name": "mouse",
+  "description": "beta program of virtual mouse",
+  "version": "0.9.3",
+  "configuration": {
+    "warp": {
+      "locales": [
+        "default",
+        "portal",
+        "solar"
+      ],
+      "locale": "default"
+    },
+    "safemode": [
+      "left",
+      "empty",
+      "pointer",
+      "next",
+      "right"
+    ],
+    "mode": {
+      "next": 3,
+      "pointer": 5,
+      "arrow": 10,
+      "control": 10,
+      "double": 5,
+      "alpha": 10,
+      "drag": 5,
+      "left": 5,
+      "move": 10,
+      "shift": 10,
+      "altab": 10,
+      "empty": 5,
+      "resize": 10,
+      "right": 5,
+      "ghost": 10,
+      "free": 10
+    },
+    "socket": {
+      "ip": "127.0.0.1",
+      "port": 1963,
+      "buffer": 200
+    },
+    "synthse": {
+      "active": false
+    },
+    "notification": {
+      "active": true,
+      "file": "./notification.html",
+      "func": "to",
+      "time": 5,
+      "left": null,
+      "top": null,
+      "width": null,
+      "height": 100,
+      "debug": false
+    },
+    "mouscreen": {
+      "active": true,
+      "save": true,
+      "func": "to",
+      "left": null,
+      "top": null,
+      "disabled": 10,
+      "debug": false,
+      "audio": null
+    },
+    "configuration": {
+      "save": true,
+      "func": "to",
+      "left": 0,
+      "top": null,
+      "debug": false
+    },
+    "close": {
+      "time": 10
+    },
+    "python": {
+      "path": null
+    },
+    "sounds": {
+      "path": "./app/sounds/",
+      "default": "default.wav",
+      "enabled": true,
+      "debug": false
+    },
+    "style": {
+      "themes": [
+        "default",
+        "golden"
+      ],
+      "path": "./app/style/",
+      "theme": "default"
+    },
+    "lang": {
+      "locales": [
+        "en",
+        "ja",
+        "fr"
+      ],
+      "path": "./app/lang/",
+      "locale": "fr"
+    }
+  },
+  "keywords": [
+    "special access system",
+    "scanning mechanisms",
+    "adaptation",
+    "virtual mouse"
+  ],
+  "window": {
+    "position": "center",
+    "always-on-top": true,
+    "frameless": false,
+    "toolbar": false,
+    "frame": false,
+    "show": false,
+    "width": 420,
+    "height": 420,
+    "min_width": 140,
+    "min_height": 140,
+    "transparent": true
+  }
+}

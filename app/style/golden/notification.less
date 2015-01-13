@@ -1,0 +1,47 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   default.js                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adjivas <adjivas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2014/09/15 10:02:36 by adjivas           #+#    #+#             */
+/*   Updated: 2014/09/15 10:02:36 by adjivas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+@charset 'UTF-8';
+
+:root {
+  @background-color: rgb(118, 84, 144);
+  @border-color: rgb(0, 0, 0);
+  @font-color: rgb(255, 255, 255);
+
+  notif {
+    font-family: fantasy;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-fill-color: @font-color;
+    -webkit-text-stroke-color: @border-color;
+  }
+}
+
+:root {
+  -webkit-user-select: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  body {
+    margin: 0px;
+    notif {
+      position: fixed;
+      text-align: center;
+      word-wrap:break-word;
+      width: 100%;
+      height: 100%;
+    }
+    * {
+      pointer-events: none;
+    }
+  }
+}

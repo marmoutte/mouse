@@ -1,0 +1,221 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   default.js                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adjivas <adjivas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2014/09/15 10:02:36 by adjivas           #+#    #+#             */
+/*   Updated: 2014/09/15 10:02:36 by adjivas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+@charset 'UTF-8';
+
+@-webkit-keyframes close {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/*
+** Instructions on the colors and images.
+*/
+
+:root {
+  @items: left, drag, right, double, empty, arrow, control, ghost, move,
+          resize, free, alpha, altab, shift;
+  @background-color: rgb(118, 84, 144);
+  //@mouse-color: rgb(101, 105, 109);
+  //@mouse-color-true: rgb(95, 146, 97);
+  //@mouse-color-false: rgb(170, 75, 75);
+  @mouse-color: rgb(0, 0, 0);
+  @mouse-color-true: rgb(0, 255, 0);
+  @mouse-color-false: rgb(255, 0, 0);
+
+  @border-color: rgb(0, 0, 0);
+  @font-color: rgb(0, 0, 0);
+  @selected-color: rgb(206, 178, 223);
+  @root: './app/image/golden/';
+
+  program {
+    background-color: @background-color;
+    background-image: url('@{root}bgd.png');
+    menu {
+      text-shadow: 0 0 7px rgba(0, 0, 0, .5);
+
+      .menu(@iterator: 1) when(@iterator <= length(@items)) {
+        @item: extract(@items, @iterator);
+        //@link: '@{root}icon-set-golden.png';
+        //@inty: (@iterator - 1)*50;
+        @{item} {
+          @link: '@{root}@{item}.png';
+          //@link: '@{root}icon-set-golden.png';
+          //@inty: (@iterator - 1)*50;
+          background-image: url(@link);
+          background-position: -50px 0px;
+        }.menu((@iterator + 1));
+
+        //@{item}:selected {
+        //  @link: '@{root}@{item}.png';
+        //  background-color: @selected-color;
+        //  background-position: 0px 0px;
+        //  background-position: 0px unit(@inty,px);
+        //}.menu((@iterator + 1));
+      }.menu();
+
+
+      *[selected] {
+        background-position: 0px 0px;
+      }
+      *[disabled] {
+        display: none;
+      }
+    }
+    version {
+      color: @font-color;
+    }
+    configuration, github, close {
+      cursor: pointer;
+      background-position: -50px 0px;
+    }
+    configuration:hover, github:hover, close:hover { 
+      background-position: 0px 0px; 
+    }
+    configuration {
+      background-image: url('@{root}configuration.png');
+    }
+    github {
+      background-image: url('@{root}github.png');
+    }
+    close {
+      background-image: url('@{root}close.png');
+    }
+
+    dial {
+      -webkit-app-region: no-drag;
+      cursor: pointer;
+      border-radius: 100%;
+      box-shadow: 0 0 0  4px rgb(  0,   0,   0),
+                  0 0 0 16px rgb( 39,  41,  43),
+                  0 0 0 19px rgb(212, 178, 232);
+      pointer {
+        -webkit-app-region: no-drag;
+        cursor: pointer;
+        border-radius: 100%;
+        background-image: url('@{root}pointer-big.png');
+      }
+      pointer[hidden] {
+        background-image: none;
+      }
+      &[active='true'] pointer {
+        background-color: @mouse-color-true;
+      }
+      &[active='false'] pointer {
+        background-color: @mouse-color-false;
+      }
+    }
+    * {
+      &[hidden] {
+        display: none;
+      }
+    }
+  }
+  program[close] {
+    -webkit-animation-name: close;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+    -webkit-animation-play-state: running;
+  }
+  * {
+    -webkit-app-region: drag;
+  }
+}
+
+/*
+** Instructions on the positions and dimensions.
+*/
+
+:root {
+  -webkit-user-select: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  program, body {
+    position: fixed;
+    padding: 0px;
+    margin: 0px;
+    width: 420px;
+    height: 420px;
+    min-width: 420px;
+    min-height: 420px;
+    menu {
+      position: absolute;
+      padding: 0px;
+      margin: 185px;
+      width: 100%;
+      height: 100%;
+      * {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+      }
+    }
+    dial {
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      left: 0px;
+      top: 0px;
+      margin: 90px;
+      pointer-events: all;
+      pointer {
+        position: relative;
+        display: block;
+        width: 240px;
+        height: 240px;
+        background-size: 250px;
+        background-position: center;
+      }
+    }
+    version, github, configuration, close {
+      position: absolute;
+      text-align: right;
+      pointer-events: all;
+      /*background-size: 50px;*/
+      margin: 15px;
+      width: 50px;
+      height: 50px;
+      -webkit-app-region: no-drag;
+    }
+    version {
+      width: 50px;
+      height: 25px;
+      right: 0px;
+      bottom: 0px;
+      font-size: 4.7vmin;
+      display: table;
+      vertical-align: bottom;
+    }
+    github, close {
+      left: 0px;
+    }
+    github, configuration {
+      top: 0px;
+    }
+    configuration {
+      right: 0px;
+    }
+    close {
+      bottom: 0px;
+    }
+    * {
+      pointer-events: none;
+    }
+  }
+}
