@@ -37,12 +37,14 @@ var Dial = {
   },
   'mouse': window.addEventListener('mouseup', function (arg) {
     var elemt = arg.toElement;
-
     elemt = elemt.tagName.toLowerCase();
     if (elemt === Dial.target)
       Dial.call();
   }, false),
   'default': window.addEventListener('load', function (arg) {
     Dial.call(true);
-  }, false)
+  }, false),
+  'dummy': addEventListener('click', function() {
+    console.log("click");
+  }, true)
 }

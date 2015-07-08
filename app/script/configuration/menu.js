@@ -29,20 +29,19 @@ var Menu = {
     console.log(name, dom.id, dom.value);
   },
   'build': function (dom, name) {
-    var safe = Menu.safe;
-    var max = (safe.indexOf(name) !== -1) ? Menu.disabled - 1 : Menu.disabled;
-    var tag;
+      var safe = Menu.safe;
+      var max = (safe.indexOf(name) !== -1) ? Menu.disabled - 1 : Menu.disabled;
+      var tag;
 
-    tag = document.createElement('input');
-    tag.setAttribute("id", name);
-    tag.setAttribute("type", "range");
-    tag.setAttribute("min", 1);      
-    tag.setAttribute("max", max);
+      tag = document.createElement('input');
+      tag.setAttribute("id", name);
+      tag.setAttribute("type", "range");
+      tag.setAttribute("min", 1);      
+      tag.setAttribute("max", max);
 
-    tag.setAttribute("value", Conf.mode[name]);
-    console.log(tag.value);
-    tag.addEventListener('change', Menu.change, false);
-    dom.appendChild(tag);
+      tag.setAttribute("value", Conf.mode[name]);
+      tag.addEventListener('change', Menu.change, false);
+      dom.appendChild(tag);
   },
   'init': function (body) {
     var dom = body.querySelectorAll(Menu.target);

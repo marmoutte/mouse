@@ -28,7 +28,8 @@ var Position = {
   },
   'to': function (x, y) {
     var win = Position.win;
-
+    var e = new Error();
+    console.log(e);
     win.moveTo(x, y);
   }
 };

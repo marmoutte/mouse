@@ -63,7 +63,7 @@ from win32com.client import gencache
 gencache.EnsureModule('{C866CA3A-32F7-11D2-9602-00C04F8EE628}', 0, 5, 0)
 
 _voice = win32com.client.Dispatch("SAPI.SpVoice")
-_recognizer = win32com.client.Dispatch("SAPI.SpSharedRecognizer")
+_recognizer = win32com.client.Dispatch("SAPI.SpInprocRecognizer")
 _listeners = []
 _handlerqueue = []
 _eventthread=None

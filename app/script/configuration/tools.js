@@ -20,11 +20,12 @@ var Tools = {
 
     while (dom.firstChild)
       dom.removeChild(dom.firstChild);
-    Close.build(dom);
     Language.build(dom);
     Warp.build(dom);
     StyleEngine.build(dom);
     Notification.build(dom);
     Synthse.build(dom);
+    Sound.build(dom);
+    Close.build(dom);
   }
 };

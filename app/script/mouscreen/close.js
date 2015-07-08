@@ -13,7 +13,8 @@
 'use strict';
 
 var win = require('nw.gui').Window.get();
-
+/*var Package = require('package')();
+var Winconf = Package.window;*/
 /*
 ** The class is a procedure of program exit.
 */
@@ -31,9 +32,13 @@ var Close = {
     var data;
 
     if (Close.save && (Conf.mouscreen.left !== win.x 
-                   ||  Conf.mouscreen.right !== win.y)) {
+                   ||  Conf.mouscreen.right !== win.y/*
+                   ||  Winconf.width !== win.innerWidth
+                   ||  Winconf.height !== win.innerHeight*/)) {
       Conf.mouscreen.left = win.x;
       Conf.mouscreen.top = win.y;
+      //Winconf.width = window.innerWidth;
+      //Winconf.height = window.innerHeight;
       data = JSON.stringify(Package, null, 2, '\t');
       data += '\n';
       File.write(path, data).then(function(res, err) {

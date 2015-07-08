@@ -30,7 +30,7 @@ var Zoom = {
     Zoom.node = document.body;
   }, false),
 
-  'resize': function (arg) {   
+  'resize': function (arg) { 
     var rest = {
       '0': {
         '0': Zoom.last.x,
@@ -91,4 +91,3 @@ var Zoom = {
     Zoom.action = true;
   }, false)
 };
- 

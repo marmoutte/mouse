@@ -28,7 +28,7 @@ var Configuration = {
     'resizable': false,
     'toolbar': false,
     'frame': false,
-    'width': 800,
+    'width': 920,
     'height': 420,
     'show': false,
     'top': Conf.configuration.top,

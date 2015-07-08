@@ -42,5 +42,5 @@ var Body = {
       Version.init(node);
     if (window.Options)
       Options.init(node);
-  }, false)
+  }, false),
 };
